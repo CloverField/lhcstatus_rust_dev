@@ -229,7 +229,24 @@ fn get_sector_status(sector: Sectors) {
             }
         },
         Sectors::Sector78 => {
-            println!("Selected Sector 78")
+            let coords = [
+                (478,315),  //CMAMR7
+                (568,315),  //CSAMR7
+                (668,315),  //CMMSL8
+                (758,315),  //CSMSL8
+                (858,315),  //CMITL8
+                (948,315)   //CSITL8
+            ];
+            
+            let pixels = get_pixels(&coords, img); 
+            let all_good = 255 * pixels.len();
+            let sum_of_good_cyrostats = get_sum_of_good_cryostats(pixels);
+
+            if all_good == sum_of_good_cyrostats {
+                println!("Everything looks good in Sector 78");
+            } else {
+                println!("Cyro is down in Sector 78");
+            }
         },
         Sectors::Sector81 => {
             println!("Selected Sector 81")
