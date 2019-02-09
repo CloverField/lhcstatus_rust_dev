@@ -1,4 +1,9 @@
+extern crate reqwest;
+
 use std::io;
+use std::fs;
+use std::fs::File;
+
 
 fn main() {
     println!("What do you want to check?");
@@ -23,4 +28,15 @@ fn main() {
     .expect("Failed to read line");
 
     println!("{}", input);
+}
+
+fn get_image(url: &str){
+    let mut resp = reqwest::get(url).expect("request failed");
+    let mut out = File::create("./test.png").expect("failed to create file");
+    io::copy(&mut resp, &mut out).expect("failed to copy content");
+}
+
+fn clean_up_image() -> std::io::Result<()>{
+    fs::remove_file("./test.png")?;
+    Ok(())
 }
