@@ -1,8 +1,8 @@
 extern crate image;
 
 use crate::lhc_status_options::Sectors;
-use crate::web;
 use crate::utils;
+use crate::web;
 
 use std::io;
 
