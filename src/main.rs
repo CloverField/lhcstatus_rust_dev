@@ -1,4 +1,5 @@
 extern crate reqwest;
+extern crate image;
 
 use std::fs;
 use std::fs::File;
@@ -92,19 +93,35 @@ fn check_cryo_status() {
         6 => get_sector_status(Sectors::Sector67),
         7 => get_sector_status(Sectors::Sector78),
         8 => get_sector_status(Sectors::Sector81),
-        _ => println!("Please Select a valid sector"),
+        _ => println!("Please Select a valid sector")
     }
 }
 
 fn get_sector_status(sector: Sectors) {
     match sector {
-        Sectors::Sector12 => println!("Selected Sector 12"),
-        Sectors::Sector23 => println!("Selected Sector 23"),
-        Sectors::Sector34 => println!("Selected Sector 34"),
-        Sectors::Sector45 => println!("Selected Sector 45"),
-        Sectors::Sector56 => println!("Selected Sector 56"),
-        Sectors::Sector67 => println!("Selected Sector 67"),
-        Sectors::Sector78 => println!("Selected Sector 78"),
-        Sectors::Sector81 => println!("Selected Sector 81"),
+        Sectors::Sector12 => {
+            println!("Selected Sector 12")
+        },
+        Sectors::Sector23 => {
+            println!("Selected Sector 23")
+        },
+        Sectors::Sector34 => {
+            println!("Selected Sector 34")
+        },
+        Sectors::Sector45 => {
+            println!("Selected Sector 45")
+        },
+        Sectors::Sector56 => {
+            println!("Selected Sector 56")
+        },
+        Sectors::Sector67 => {
+            println!("Selected Sector 67")
+        },
+        Sectors::Sector78 => {
+            println!("Selected Sector 78")
+        },
+        Sectors::Sector81 => {
+            println!("Selected Sector 81")
+        }
     }
 }
