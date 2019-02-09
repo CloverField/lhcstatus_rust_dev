@@ -137,7 +137,33 @@ fn get_sector_status(sector: Sectors) {
             }
         },
         Sectors::Sector23 => {
-            println!("Selected Sector 23")
+            let coords = [
+                (100,140),  //CMITR2
+                (188,140),  //CSITR2
+                (288,140),  //CMMSR2
+                (378,140),  //CSMSR2
+                (478,140),  //CMAML3
+                (568,140)   //CSAML3
+            ];
+            
+            let mut pixels = Vec::new();
+            for x in &coords {
+                pixels.push(img.get_pixel(x.0, x.1).data);
+            }
+
+            let all_good = 255 * pixels.len();
+            let mut sum_of_good_cyrostats = 0;
+            for &t in pixels.iter() {
+                if t[0] == 0 && t[1] == 255 && t[2] == 0 {
+                    sum_of_good_cyrostats += 255;
+                }
+            }
+
+            if all_good == sum_of_good_cyrostats {
+                println!("Everything looks good in Sector 23");
+            } else {
+                println!("Cyro is down in Sector 23");
+            }
         },
         Sectors::Sector34 => {
             println!("Selected Sector 34")
