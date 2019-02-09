@@ -5,6 +5,7 @@ use std::fs;
 use std::fs::File;
 use std::io;
 use image::GenericImageView;
+use image::Pixel;
 
 fn main() {
     println!("What do you want to check?");
@@ -101,8 +102,10 @@ fn check_cryo_status() {
 fn get_sector_status(sector: Sectors) {
     get_image("https://vistar-capture.web.cern.ch/vistar-capture/lhc2.png");
     let img = image::open("./test.png").expect("Unable to open image");
-    println!("dimensions {:?}", img.dimensions());
-    println!("{:?}", img.color());
+    let rgb = img.get_pixel(100, 100).to_rgb();
+    for x in &rgb.data {
+        println!("{}", x);
+    }
 
     match sector {
         Sectors::Sector12 => {
