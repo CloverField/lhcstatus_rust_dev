@@ -41,7 +41,6 @@ fn clean_up_image() -> std::io::Result<()>{
     Ok(())
 }
 
-#[derive(Debug)]
 enum Sectors{
     Sector12,
     Sector23,
