@@ -5,7 +5,6 @@ use std::fs;
 use std::fs::File;
 use std::io;
 use image::GenericImageView;
-use image::Pixel;
 
 fn main() {
     println!("What do you want to check?");
@@ -102,14 +101,40 @@ fn check_cryo_status() {
 fn get_sector_status(sector: Sectors) {
     get_image("https://vistar-capture.web.cern.ch/vistar-capture/lhc2.png");
     let img = image::open("./test.png").expect("Unable to open image");
-    let rgb = img.get_pixel(100, 100).to_rgb();
-    for x in &rgb.data {
-        println!("{}", x);
-    }
 
     match sector {
         Sectors::Sector12 => {
-            println!("Selected Sector 12")
+            let coords = [
+                (100,100),  //CMITR1
+                (188,100),  //CSITR1
+                (288,100),  //CMMSR1
+                (378,100),  //CSMSR1
+                (478,100),  //CMAR12
+                (568,100),  //CSAR12
+                (668,100),  //CMMSL2
+                (758,100),  //CSMSL2
+                (858,100),  //CMITL2
+                (948,100)   //CSITL2
+            ]; 
+
+            let mut pixels = Vec::new();
+            for x in &coords {
+                pixels.push(img.get_pixel(x.0, x.1).data);
+            }
+
+            let all_good = 255 * pixels.len();
+            let mut sum_of_good_cyrostats = 0;
+            for &t in pixels.iter() {
+                if t[0] == 0 && t[1] == 255 && t[2] == 0 {
+                    sum_of_good_cyrostats += 255;
+                }
+            }
+
+            if all_good == sum_of_good_cyrostats {
+                println!("Everything looks good in Sector 12");
+            } else {
+                println!("Cyro is down in Sector 12");
+            }
         },
         Sectors::Sector23 => {
             println!("Selected Sector 23")
