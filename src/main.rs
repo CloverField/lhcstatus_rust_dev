@@ -4,7 +4,6 @@ extern crate reqwest;
 mod utils;
 mod web;
 
-use std::fs;
 use std::io;
 
 fn main() {
@@ -44,11 +43,6 @@ fn select_option(n: u32) {
         3 => check_60_amp_status(),
         _ => println!("Select a valid option"),
     }
-}
-
-fn clean_up_image() -> std::io::Result<()> {
-    fs::remove_file("./test.png")?;
-    Ok(())
 }
 
 enum Sectors {
@@ -268,7 +262,7 @@ fn get_sector_status(sector: Sectors) {
             }
         }
     }
-    clean_up_image().expect("Unable to clean up image");
+    utils::clean_up_image().expect("Unable to clean up image");
 }
 
 fn check_60_amp_status() {
@@ -295,5 +289,5 @@ fn check_60_amp_status() {
         println!("A PCPermit is down");
     }
 
-    clean_up_image().expect("Unable to clean up image");
+    utils::clean_up_image().expect("Unable to clean up image");
 }
