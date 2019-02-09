@@ -4,6 +4,7 @@ extern crate image;
 use std::fs;
 use std::fs::File;
 use std::io;
+use image::GenericImageView;
 
 fn main() {
     println!("What do you want to check?");
@@ -98,6 +99,11 @@ fn check_cryo_status() {
 }
 
 fn get_sector_status(sector: Sectors) {
+    get_image("https://vistar-capture.web.cern.ch/vistar-capture/lhc2.png");
+    let img = image::open("./test.png").expect("Unable to open image");
+    println!("dimensions {:?}", img.dimensions());
+    println!("{:?}", img.color());
+
     match sector {
         Sectors::Sector12 => {
             println!("Selected Sector 12")
@@ -124,4 +130,5 @@ fn get_sector_status(sector: Sectors) {
             println!("Selected Sector 81")
         }
     }
+    clean_up_image().expect("Unable to clean up image");
 }
