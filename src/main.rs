@@ -298,14 +298,14 @@ fn check_60_amp_status() {
     get_image("https://vistar-capture.web.cern.ch/vistar-capture/lhc2.png");
     let img = image::open("./test.png").expect("Unable to open image");
     let coords = [
-        (108,403),   //S12
-        (203,403),   //S23
-        (297,403),   //S34
-        (392,402),   //S45
-        (498,402),   //S56
-        (595,402),   //S67
-        (688,403),   //S78
-        (772,402)   //S81
+        (108, 403), //S12
+        (203, 403), //S23
+        (297, 403), //S34
+        (392, 402), //S45
+        (498, 402), //S56
+        (595, 402), //S67
+        (688, 403), //S78
+        (772, 402), //S81
     ];
 
     let pixels = get_pixels(&coords, img);
