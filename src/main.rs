@@ -2,9 +2,9 @@ extern crate image;
 extern crate reqwest;
 
 mod utils;
+mod web;
 
 use std::fs;
-use std::fs::File;
 use std::io;
 
 fn main() {
@@ -44,12 +44,6 @@ fn select_option(n: u32) {
         3 => check_60_amp_status(),
         _ => println!("Select a valid option"),
     }
-}
-
-fn get_image(url: &str) {
-    let mut resp = reqwest::get(url).expect("request failed");
-    let mut out = File::create("./test.png").expect("failed to create file");
-    io::copy(&mut resp, &mut out).expect("failed to copy content");
 }
 
 fn clean_up_image() -> std::io::Result<()> {
@@ -101,7 +95,7 @@ fn check_cryo_status() {
 }
 
 fn get_sector_status(sector: Sectors) {
-    get_image("https://vistar-capture.web.cern.ch/vistar-capture/lhc2.png");
+    web::get_image("https://vistar-capture.web.cern.ch/vistar-capture/lhc2.png");
     let img = image::open("./test.png").expect("Unable to open image");
 
     match sector {
@@ -278,7 +272,7 @@ fn get_sector_status(sector: Sectors) {
 }
 
 fn check_60_amp_status() {
-    get_image("https://vistar-capture.web.cern.ch/vistar-capture/lhc2.png");
+    web::get_image("https://vistar-capture.web.cern.ch/vistar-capture/lhc2.png");
     let img = image::open("./test.png").expect("Unable to open image");
     let coords = [
         (108, 403), //S12
