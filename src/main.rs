@@ -52,3 +52,22 @@ enum Sectors{
     Sector78,
     Sector81
 }
+
+fn check_cryo_status(){
+    println!("Which sector do you want to check?");
+    println!("Sector12");
+    println!("Sector23");
+    println!("Sector34");
+    println!("Sector45");
+    println!("Sector56");
+    println!("Sector67");
+    println!("Sector78");
+    println!("Sector81");
+
+    let mut input = String::new();
+
+    io::stdin().read_line(&mut input)
+    .expect("Failed to read line");
+
+    println!("{}", input);
+}
