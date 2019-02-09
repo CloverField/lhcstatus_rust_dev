@@ -29,9 +29,16 @@ fn main() {
 
     let input_num = input.trim().parse();
 
-    match input_num.unwrap() {
+    match input_num {
+        Ok(n) => select_option(n),
+        Err(e) => println!("Error: {}", e)
+    }
+}
+
+fn select_option(n: u32){
+    match n {
         1 => check_cryo_status(),
-        _ => println!("Please select a valid option"),
+        _ => println!("Select a valid option")
     }
 }
 
