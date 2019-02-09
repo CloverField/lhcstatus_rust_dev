@@ -1,6 +1,7 @@
 extern crate image;
 
 use image::GenericImageView;
+use std::fs;
 
 pub fn get_pixels(coords: &[(u32, u32)], img: image::DynamicImage) -> Vec<[u8; 4]> {
     let mut pixels = Vec::new();
@@ -18,4 +19,9 @@ pub fn get_sum_of_good_cryostats(pixels: Vec<[u8; 4]>) -> usize {
         }
     }
     sum_of_good_cyrostats
+}
+
+pub fn clean_up_image() -> std::io::Result<()> {
+    fs::remove_file("./test.png")?;
+    Ok(())
 }
