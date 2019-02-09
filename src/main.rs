@@ -40,3 +40,15 @@ fn clean_up_image() -> std::io::Result<()>{
     fs::remove_file("./test.png")?;
     Ok(())
 }
+
+#[derive(Debug)]
+enum Sectors{
+    Sector12,
+    Sector23,
+    Sector34,
+    Sector45,
+    Sector56,
+    Sector67,
+    Sector78,
+    Sector81
+}
