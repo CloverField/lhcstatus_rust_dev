@@ -117,18 +117,9 @@ fn get_sector_status(sector: Sectors) {
                 (948,100)   //CSITL2
             ]; 
 
-            let mut pixels = Vec::new();
-            for x in &coords {
-                pixels.push(img.get_pixel(x.0, x.1).data);
-            }
-
+            let pixels = get_pixels(&coords, img); 
             let all_good = 255 * pixels.len();
-            let mut sum_of_good_cyrostats = 0;
-            for &t in pixels.iter() {
-                if t[0] == 0 && t[1] == 255 && t[2] == 0 {
-                    sum_of_good_cyrostats += 255;
-                }
-            }
+            let sum_of_good_cyrostats = get_sum_of_good_cryostats(pixels);
 
             if all_good == sum_of_good_cyrostats {
                 println!("Everything looks good in Sector 12");
@@ -146,18 +137,9 @@ fn get_sector_status(sector: Sectors) {
                 (568,140)   //CSAML3
             ];
             
-            let mut pixels = Vec::new();
-            for x in &coords {
-                pixels.push(img.get_pixel(x.0, x.1).data);
-            }
-
+            let pixels = get_pixels(&coords, img); 
             let all_good = 255 * pixels.len();
-            let mut sum_of_good_cyrostats = 0;
-            for &t in pixels.iter() {
-                if t[0] == 0 && t[1] == 255 && t[2] == 0 {
-                    sum_of_good_cyrostats += 255;
-                }
-            }
+            let sum_of_good_cyrostats = get_sum_of_good_cryostats(pixels);
 
             if all_good == sum_of_good_cyrostats {
                 println!("Everything looks good in Sector 23");
@@ -173,18 +155,9 @@ fn get_sector_status(sector: Sectors) {
                 (758,175)   //CSMSL1
             ];
             
-            let mut pixels = Vec::new();
-            for x in &coords {
-                pixels.push(img.get_pixel(x.0, x.1).data);
-            }
-
+            let pixels = get_pixels(&coords, img); 
             let all_good = 255 * pixels.len();
-            let mut sum_of_good_cyrostats = 0;
-            for &t in pixels.iter() {
-                if t[0] == 0 && t[1] == 255 && t[2] == 0 {
-                    sum_of_good_cyrostats += 255;
-                }
-            }
+            let sum_of_good_cyrostats = get_sum_of_good_cryostats(pixels);
 
             if all_good == sum_of_good_cyrostats {
                 println!("Everything looks good in Sector 34");
@@ -193,7 +166,27 @@ fn get_sector_status(sector: Sectors) {
             }
         },
         Sectors::Sector45 => {
-            println!("Selected Sector 45")
+            let coords = [
+                (288,210),  //CMMSR4
+                (378,210),  //CSMSR4
+                (478,210),  //CMAR45
+                (568,210),  //CSAR45
+                (668,210),  //CMMSL5
+                (758,210),  //CSMSL5
+                (858,210),  //CMITL6
+                (948,210)   //CSITL6
+
+            ];
+            
+            let pixels = get_pixels(&coords, img); 
+            let all_good = 255 * pixels.len();
+            let sum_of_good_cyrostats = get_sum_of_good_cryostats(pixels);
+
+            if all_good == sum_of_good_cyrostats {
+                println!("Everything looks good in Sector 45");
+            } else {
+                println!("Cyro is down in Sector 45");
+            }
         },
         Sectors::Sector56 => {
             println!("Selected Sector 56")
@@ -209,4 +202,22 @@ fn get_sector_status(sector: Sectors) {
         }
     }
     clean_up_image().expect("Unable to clean up image");
+}
+
+fn get_pixels(coords: &[(u32,u32)], img: image::DynamicImage) -> Vec<[u8;4]> {
+    let mut pixels = Vec::new();
+    for x in coords {
+        pixels.push(img.get_pixel(x.0, x.1).data);
+    }
+    pixels
+}
+
+fn get_sum_of_good_cryostats(pixels: Vec<[u8;4]>) -> usize {
+    let mut sum_of_good_cyrostats = 0;
+    for &t in pixels.iter() {
+        if t[0] == 0 && t[1] == 255 && t[2] == 0 {
+            sum_of_good_cyrostats += 255;
+        }
+    }
+    sum_of_good_cyrostats
 }
