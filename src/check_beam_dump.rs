@@ -58,7 +58,7 @@ fn get_beam_dump_status(beam: Beams) {
             if all_good == sum_of_good_components {
                 println!("Everything looks good for the Beam 1 Beam Dump");
             } else {
-                println!("Looks like there is an error with the Beam One Beam Dump");
+                println!("Looks like there is an error with the Beam 2 Beam Dump");
             }
         }
         Beams::Beam2 => {
@@ -86,9 +86,9 @@ fn get_beam_dump_status(beam: Beams) {
             let sum_of_good_components = utils::get_sum_of_good_components(pixels);
 
             if all_good == sum_of_good_components {
-                println!("Everything looks good for the Beam 1 Beam Dump");
+                println!("Everything looks good for the Beam 2 Beam Dump");
             } else {
-                println!("Looks like there is an error with the Beam One Beam Dump");
+                println!("Looks like there is an error with the Beam 2 Beam Dump");
             }
         }
     }
