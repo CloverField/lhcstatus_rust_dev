@@ -18,5 +18,5 @@ pub enum RFSectors {
 
 pub enum Beams {
     Beam1,
-    Beam2
+    Beam2,
 }

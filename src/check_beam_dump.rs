@@ -33,22 +33,22 @@ fn get_beam_dump_status(beam: Beams) {
     match beam {
         Beams::Beam1 => {
             let coords = [
-                (192,38),   //BeamOneDumped
-                (73,60),    //Kicker
-                (200,60),   //BETS
-                (323,60),   //IPOC - Beam Dump Pane
-                (76,80),    //LASS
-                (200,82),   //RETRIGGER
-                (326,82),   //XPOC
-                (81,101),   //REMOTE - Beam Dump Pane
-                (193,102),  //ON - Beam Dump Pane
-                (90,168),   //REMOTE - Injection Pane
-                (194,168),  //ON - Injection Pane
-                (333,168),  //TIMING ON
-                (65,189),   //CONDITIONING
-                (286,188),  //TIMEOUT
-                (111,210),  //IPOC - Injection Pane
-                (290,210)   //IQC
+                (192, 38),  //BeamOneDumped
+                (73, 60),   //Kicker
+                (200, 60),  //BETS
+                (323, 60),  //IPOC - Beam Dump Pane
+                (76, 80),   //LASS
+                (200, 82),  //RETRIGGER
+                (326, 82),  //XPOC
+                (81, 101),  //REMOTE - Beam Dump Pane
+                (193, 102), //ON - Beam Dump Pane
+                (90, 168),  //REMOTE - Injection Pane
+                (194, 168), //ON - Injection Pane
+                (333, 168), //TIMING ON
+                (65, 189),  //CONDITIONING
+                (286, 188), //TIMEOUT
+                (111, 210), //IPOC - Injection Pane
+                (290, 210), //IQC
             ];
 
             let pixels = utils::get_pixels(&coords, img);
@@ -60,25 +60,25 @@ fn get_beam_dump_status(beam: Beams) {
             } else {
                 println!("Looks like there is an error with the Beam One Beam Dump");
             }
-        },
+        }
         Beams::Beam2 => {
             let coords = [
                 (593, 38),  //BeamTwoDumped
-                (472,60),   //Kicker
-                (600,60),   //BETS
-                (723,60),   //IPOC - Beam Dump Pane
-                (476,80),   //LASS
-                (600,82),   //RETRIGGER
-                (726,82),   //XPOC
-                (481,101),  //REMOTE - Beam Dump Pane
-                (593,102),  //ON - Beam Dump Pane
-                (490,168),  //REMOTE - Injection Pane
-                (594,168),  //ON - Injection Pane
-                (733,168),  //TIMING ON
-                (465,189),  //CONDITIONING
-                (686,188),  //TIMEOUT
-                (511,210),  //IPOC - Injection Pane
-                (690,210)   //IQC
+                (472, 60),  //Kicker
+                (600, 60),  //BETS
+                (723, 60),  //IPOC - Beam Dump Pane
+                (476, 80),  //LASS
+                (600, 82),  //RETRIGGER
+                (726, 82),  //XPOC
+                (481, 101), //REMOTE - Beam Dump Pane
+                (593, 102), //ON - Beam Dump Pane
+                (490, 168), //REMOTE - Injection Pane
+                (594, 168), //ON - Injection Pane
+                (733, 168), //TIMING ON
+                (465, 189), //CONDITIONING
+                (686, 188), //TIMEOUT
+                (511, 210), //IPOC - Injection Pane
+                (690, 210), //IQC
             ];
 
             let pixels = utils::get_pixels(&coords, img);
@@ -90,7 +90,7 @@ fn get_beam_dump_status(beam: Beams) {
             } else {
                 println!("Looks like there is an error with the Beam One Beam Dump");
             }
-        },
+        }
     }
 
     utils::clean_up_image().expect("Unable to clean up image");
