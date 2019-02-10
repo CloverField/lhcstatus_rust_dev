@@ -31,8 +31,9 @@ pub fn check_rf_status() {
 }
 
 fn get_rf_status(sector: RFSectors) {
-    web::get_image("https://vistar-capture.web.cern.ch/vistar-capture/lhc2.png");
-    let img = image::open("./test.png").expect("Unable to open image");
+    let img = 
+        web::get_image("https://vistar-capture.web.cern.ch/vistar-capture/lhc2.png")
+            .expect("Unable to get image");
 
     match sector {
         RFSectors::Sector1L4 => {
@@ -100,6 +101,4 @@ fn get_rf_status(sector: RFSectors) {
             }
         }
     }
-
-    utils::clean_up_image().expect("Unable to clean up image");
 }

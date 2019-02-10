@@ -4,8 +4,10 @@ use crate::utils;
 use crate::web;
 
 pub fn check_60_amp_status() {
-    web::get_image("https://vistar-capture.web.cern.ch/vistar-capture/lhc2.png");
-    let img = image::open("./test.png").expect("Unable to open image");
+    let img = 
+        web::get_image("https://vistar-capture.web.cern.ch/vistar-capture/lhc2.png")
+        .expect("Unable to get image");
+
     let coords = [
         (108, 403), //S12
         (203, 403), //S23
@@ -26,6 +28,4 @@ pub fn check_60_amp_status() {
     } else {
         println!("A PCPermit is down");
     }
-
-    utils::clean_up_image().expect("Unable to clean up image");
 }

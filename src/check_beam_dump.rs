@@ -27,8 +27,9 @@ pub fn check_beam_dump_status() {
 }
 
 fn get_beam_dump_status(beam: Beams) {
-    web::get_image("https://vistar-capture.web.cern.ch/vistar-capture/lhcbds.png");
-    let img = image::open("./test.png").expect("Unable to open image");
+    let img = 
+    web::get_image("https://vistar-capture.web.cern.ch/vistar-capture/lhcbds.png")
+        .expect("Unable to get image");
 
     match beam {
         Beams::Beam1 => {
@@ -92,6 +93,4 @@ fn get_beam_dump_status(beam: Beams) {
             }
         }
     }
-
-    utils::clean_up_image().expect("Unable to clean up image");
 }

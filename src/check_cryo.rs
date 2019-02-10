@@ -39,8 +39,9 @@ pub fn check_cryo_status() {
 }
 
 fn get_sector_status(sector: CryoSectors) {
-    web::get_image("https://vistar-capture.web.cern.ch/vistar-capture/lhc2.png");
-    let img = image::open("./test.png").expect("Unable to open image");
+    let img = 
+        web::get_image("https://vistar-capture.web.cern.ch/vistar-capture/lhc2.png")
+        .expect("Unable to get image");
 
     match sector {
         CryoSectors::Sector12 => {
@@ -212,5 +213,5 @@ fn get_sector_status(sector: CryoSectors) {
             }
         }
     }
-    utils::clean_up_image().expect("Unable to clean up image");
+    //utils::clean_up_image().expect("Unable to clean up image");
 }
