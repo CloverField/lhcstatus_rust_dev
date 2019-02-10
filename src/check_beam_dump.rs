@@ -27,8 +27,7 @@ pub fn check_beam_dump_status() {
 }
 
 fn get_beam_dump_status(beam: Beams) {
-    let img = 
-    web::get_image("https://vistar-capture.web.cern.ch/vistar-capture/lhcbds.png")
+    let img = web::get_image("https://vistar-capture.web.cern.ch/vistar-capture/lhcbds.png")
         .expect("Unable to get image");
 
     match beam {

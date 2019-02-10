@@ -4,8 +4,7 @@ use crate::utils;
 use crate::web;
 
 pub fn check_60_amp_status() {
-    let img = 
-        web::get_image("https://vistar-capture.web.cern.ch/vistar-capture/lhc2.png")
+    let img = web::get_image("https://vistar-capture.web.cern.ch/vistar-capture/lhc2.png")
         .expect("Unable to get image");
 
     let coords = [

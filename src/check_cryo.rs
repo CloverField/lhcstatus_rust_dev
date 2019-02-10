@@ -39,8 +39,7 @@ pub fn check_cryo_status() {
 }
 
 fn get_sector_status(sector: CryoSectors) {
-    let img = 
-        web::get_image("https://vistar-capture.web.cern.ch/vistar-capture/lhc2.png")
+    let img = web::get_image("https://vistar-capture.web.cern.ch/vistar-capture/lhc2.png")
         .expect("Unable to get image");
 
     match sector {
