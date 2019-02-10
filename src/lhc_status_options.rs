@@ -8,3 +8,10 @@ pub enum CryoSectors {
     Sector78,
     Sector81,
 }
+
+pub enum RFSectors {
+    Sector1L4,
+    Sector1R4,
+    Sector2L4,
+    Sector2R4
+}
