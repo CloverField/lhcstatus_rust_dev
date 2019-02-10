@@ -21,6 +21,10 @@ pub fn get_sum_of_good_cryostats(pixels: Vec<[u8; 4]>) -> usize {
     sum_of_good_cyrostats
 }
 
+pub fn get_sum_of_good_components(pixels: Vec<[u8; 4]>) -> usize {
+    get_sum_of_good_cryostats(pixels)
+}
+
 pub fn clean_up_image() -> std::io::Result<()> {
     fs::remove_file("./test.png")?;
     Ok(())
