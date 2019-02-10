@@ -37,8 +37,8 @@ fn get_rf_status(sector: RFSectors) {
     match sector {
         RFSectors::Sector1L4 => {
             let coords = [
-                (100,440),  //CM1L4
-                (188,440)   //CS1L4
+                (100, 440), //CM1L4
+                (188, 440), //CS1L4
             ];
 
             let pixels = utils::get_pixels(&coords, img);
@@ -50,11 +50,11 @@ fn get_rf_status(sector: RFSectors) {
             } else {
                 println!("Cyro is down in Sector Sector 1L4");
             }
-        },
+        }
         RFSectors::Sector1R4 => {
             let coords = [
-                (480,440),  //CM1R4
-                (570,440)   //CS1R4
+                (480, 440), //CM1R4
+                (570, 440), //CS1R4
             ];
 
             let pixels = utils::get_pixels(&coords, img);
@@ -66,11 +66,11 @@ fn get_rf_status(sector: RFSectors) {
             } else {
                 println!("Cyro is down in Sector Sector 1R4");
             }
-        },
+        }
         RFSectors::Sector2L4 => {
             let coords = [
-                (290,440),  //CM2L4
-                (380,440)   //CS2L4
+                (290, 440), //CM2L4
+                (380, 440), //CS2L4
             ];
 
             let pixels = utils::get_pixels(&coords, img);
@@ -82,11 +82,11 @@ fn get_rf_status(sector: RFSectors) {
             } else {
                 println!("Cyro is down in Sector Sector 1R4");
             }
-        },
+        }
         RFSectors::Sector2R4 => {
             let coords = [
-                (670,440),  //CM2R4
-                (760,440)   //CS2R4
+                (670, 440), //CM2R4
+                (760, 440), //CS2R4
             ];
 
             let pixels = utils::get_pixels(&coords, img);
@@ -98,7 +98,7 @@ fn get_rf_status(sector: RFSectors) {
             } else {
                 println!("Cyro is down in Sector Sector 1R4");
             }
-        },
+        }
     }
 
     utils::clean_up_image().expect("Unable to clean up image");

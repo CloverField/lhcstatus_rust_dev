@@ -13,5 +13,5 @@ pub enum RFSectors {
     Sector1L4,
     Sector1R4,
     Sector2L4,
-    Sector2R4
+    Sector2R4,
 }
