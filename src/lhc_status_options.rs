@@ -1,4 +1,4 @@
-pub enum Sectors {
+pub enum CryoSectors {
     Sector12,
     Sector23,
     Sector34,

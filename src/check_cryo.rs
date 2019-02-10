@@ -1,6 +1,6 @@
 extern crate image;
 
-use crate::lhc_status_options::Sectors;
+use crate::lhc_status_options::CryoSectors;
 use crate::utils;
 use crate::web;
 
@@ -26,24 +26,24 @@ pub fn check_cryo_status() {
     let input: u32 = input.trim().parse().expect("Unable to convert to u32");
 
     match input {
-        1 => get_sector_status(Sectors::Sector12),
-        2 => get_sector_status(Sectors::Sector23),
-        3 => get_sector_status(Sectors::Sector34),
-        4 => get_sector_status(Sectors::Sector45),
-        5 => get_sector_status(Sectors::Sector56),
-        6 => get_sector_status(Sectors::Sector67),
-        7 => get_sector_status(Sectors::Sector78),
-        8 => get_sector_status(Sectors::Sector81),
+        1 => get_sector_status(CryoSectors::Sector12),
+        2 => get_sector_status(CryoSectors::Sector23),
+        3 => get_sector_status(CryoSectors::Sector34),
+        4 => get_sector_status(CryoSectors::Sector45),
+        5 => get_sector_status(CryoSectors::Sector56),
+        6 => get_sector_status(CryoSectors::Sector67),
+        7 => get_sector_status(CryoSectors::Sector78),
+        8 => get_sector_status(CryoSectors::Sector81),
         _ => println!("Please Select a valid sector"),
     }
 }
 
-fn get_sector_status(sector: Sectors) {
+fn get_sector_status(sector: CryoSectors) {
     web::get_image("https://vistar-capture.web.cern.ch/vistar-capture/lhc2.png");
     let img = image::open("./test.png").expect("Unable to open image");
 
     match sector {
-        Sectors::Sector12 => {
+        CryoSectors::Sector12 => {
             let coords = [
                 (100, 100), //CMITR1
                 (188, 100), //CSITR1
@@ -67,7 +67,7 @@ fn get_sector_status(sector: Sectors) {
                 println!("Cyro is down in Sector 12");
             }
         }
-        Sectors::Sector23 => {
+        CryoSectors::Sector23 => {
             let coords = [
                 (100, 140), //CMITR2
                 (188, 140), //CSITR2
@@ -87,7 +87,7 @@ fn get_sector_status(sector: Sectors) {
                 println!("Cyro is down in Sector 23");
             }
         }
-        Sectors::Sector34 => {
+        CryoSectors::Sector34 => {
             let coords = [
                 (478, 175), //CMAML3
                 (568, 175), //CSAML3
@@ -105,7 +105,7 @@ fn get_sector_status(sector: Sectors) {
                 println!("Cyro is down in Sector 34");
             }
         }
-        Sectors::Sector45 => {
+        CryoSectors::Sector45 => {
             let coords = [
                 (288, 210), //CMMSR4
                 (378, 210), //CSMSR4
@@ -127,7 +127,7 @@ fn get_sector_status(sector: Sectors) {
                 println!("Cyro is down in Sector 45");
             }
         }
-        Sectors::Sector56 => {
+        CryoSectors::Sector56 => {
             let coords = [
                 (100, 245), //CMITR5
                 (188, 245), //CSITR5
@@ -149,7 +149,7 @@ fn get_sector_status(sector: Sectors) {
                 println!("Cyro is down in Sector 56");
             }
         }
-        Sectors::Sector67 => {
+        CryoSectors::Sector67 => {
             let coords = [
                 (288, 280), //CMMSR6
                 (378, 280), //CSMSR6
@@ -167,7 +167,7 @@ fn get_sector_status(sector: Sectors) {
                 println!("Cyro is down in Sector 67");
             }
         }
-        Sectors::Sector78 => {
+        CryoSectors::Sector78 => {
             let coords = [
                 (478, 315), //CMAMR7
                 (568, 315), //CSAMR7
@@ -187,7 +187,7 @@ fn get_sector_status(sector: Sectors) {
                 println!("Cyro is down in Sector 78");
             }
         }
-        Sectors::Sector81 => {
+        CryoSectors::Sector81 => {
             let coords = [
                 (100, 350), //CMITR8
                 (188, 350), //CSITR8
