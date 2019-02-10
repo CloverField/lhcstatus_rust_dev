@@ -15,3 +15,8 @@ pub enum RFSectors {
     Sector2L4,
     Sector2R4,
 }
+
+pub enum Beams {
+    Beam1,
+    Beam2
+}
