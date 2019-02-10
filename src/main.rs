@@ -3,6 +3,7 @@ extern crate reqwest;
 
 mod check_cryo;
 mod check_pcpermits;
+mod check_rf;
 mod lhc_status_options;
 mod utils;
 mod web;
@@ -44,6 +45,7 @@ fn select_option(n: u32) {
     match n {
         1 => check_cryo::check_cryo_status(),
         3 => check_pcpermits::check_60_amp_status(),
+        5 => check_rf::check_rf_status(),
         _ => println!("Select a valid option"),
     }
 }
