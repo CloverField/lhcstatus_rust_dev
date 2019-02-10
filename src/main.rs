@@ -1,6 +1,7 @@
 extern crate image;
 extern crate reqwest;
 
+mod check_beam_dump;
 mod check_cryo;
 mod check_pcpermits;
 mod check_rf;
@@ -46,6 +47,7 @@ fn select_option(n: u32) {
         1 => check_cryo::check_cryo_status(),
         3 => check_pcpermits::check_60_amp_status(),
         5 => check_rf::check_rf_status(),
+        7 => check_beam_dump::check_beam_dump_status(),
         _ => println!("Select a valid option"),
     }
 }
