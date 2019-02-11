@@ -6,6 +6,7 @@ mod check_cryo;
 mod check_exp_magnets;
 mod check_pcpermits;
 mod check_rf;
+mod check_smp;
 mod lhc_status_options;
 mod utils;
 mod web;
@@ -50,6 +51,7 @@ fn select_option(n: u32) {
         5 => check_rf::check_rf_status(),
         7 => check_beam_dump::check_beam_dump_status(),
         9 => check_exp_magnets::check_exp_magnet_status(),
+        11 => check_smp::check_smp_status(),
         _ => println!("Select a valid option"),
     }
 }
