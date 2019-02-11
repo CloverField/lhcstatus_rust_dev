@@ -17,7 +17,7 @@ fn get_exp_magnet_status() {
         (365, 140), //ATLAS solenoid
         (365, 180), //ATLAS toroid
         (365, 220), //CMS solenoid
-        (365, 260), //LHcb dipole
+        (365, 260), //LHCb dipole
     ];
 
     let pixels = utils::get_pixels(&coords, img);
