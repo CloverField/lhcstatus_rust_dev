@@ -33,12 +33,12 @@ fn get_smp_status(beam: Beams) {
     match beam {
         Beams::Beam1 => {
             let coords = [
-                (872,572),  //Stable Beams
-                (872,600),  //Moveable Devices Allowed In
-                (872,629),  //Beam Presence
-                (872,658),  //Setup Beam
-                (872,686),  //Global Beam Permit
-                (872,715)   //Link Status of Beam Permits
+                (872, 572), //Stable Beams
+                (872, 600), //Moveable Devices Allowed In
+                (872, 629), //Beam Presence
+                (872, 658), //Setup Beam
+                (872, 686), //Global Beam Permit
+                (872, 715), //Link Status of Beam Permits
             ];
 
             let mut pixels = utils::get_pixels(&coords, img);
@@ -60,12 +60,12 @@ fn get_smp_status(beam: Beams) {
         }
         Beams::Beam2 => {
             let coords = [
-                (945,572),  //Stable Beams
-                (945,600),  //Moveable Devices Allowed in
-                (945,629),  //Beam Presence
-                (945,658),  //Setup Beam
-                (945,686),  //Global Beam Permit
-                (945,715)   //Link Status of Beam Permits
+                (945, 572), //Stable Beams
+                (945, 600), //Moveable Devices Allowed in
+                (945, 629), //Beam Presence
+                (945, 658), //Setup Beam
+                (945, 686), //Global Beam Permit
+                (945, 715), //Link Status of Beam Permits
             ];
 
             let mut pixels = utils::get_pixels(&coords, img);
