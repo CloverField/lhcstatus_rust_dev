@@ -3,7 +3,6 @@ extern crate image;
 use crate::utils;
 use crate::web;
 
-
 pub fn check_exp_magnet_status() {
     get_exp_magnet_status();
 }
@@ -13,12 +12,12 @@ fn get_exp_magnet_status() {
         .expect("Unable to get image");
 
     let coords = [
-        (365,60),   //ALICE solenoid
-        (365,100),  //ALICE dipole  
-        (365,140),  //ATLAS solenoid
-        (365,180),  //ATLAS toroid
-        (365,220),  //CMS solenoid
-        (365,260)   //LHcb dipole
+        (365, 60),  //ALICE solenoid
+        (365, 100), //ALICE dipole
+        (365, 140), //ATLAS solenoid
+        (365, 180), //ATLAS toroid
+        (365, 220), //CMS solenoid
+        (365, 260), //LHcb dipole
     ];
 
     let pixels = utils::get_pixels(&coords, img);
