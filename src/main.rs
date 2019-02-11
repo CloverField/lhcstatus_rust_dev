@@ -3,6 +3,7 @@ extern crate reqwest;
 
 mod check_beam_dump;
 mod check_cryo;
+mod check_exp_magnets;
 mod check_pcpermits;
 mod check_rf;
 mod lhc_status_options;
@@ -48,6 +49,7 @@ fn select_option(n: u32) {
         3 => check_pcpermits::check_60_amp_status(),
         5 => check_rf::check_rf_status(),
         7 => check_beam_dump::check_beam_dump_status(),
+        9 => check_exp_magnets::check_exp_magnet_status(),
         _ => println!("Select a valid option"),
     }
 }
