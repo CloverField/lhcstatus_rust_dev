@@ -8,7 +8,7 @@ pub fn check_exp_magnet_status() {
 }
 
 fn get_exp_magnet_status() {
-    let img = web::get_image("https://vistar-capture.web.cern.ch/vistar-capture/lhc2.png")
+    let img = web::get_image("https://vistar-capture.web.cern.ch/vistar-capture/lhcexpmag.png")
         .expect("Unable to get image");
 
     let coords = [
