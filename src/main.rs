@@ -27,8 +27,8 @@ fn main() {
     println!("10. Individual Experiment Magnet Status");
     println!("11. Page 1 Beam SMP Status");
     println!("12. Page 1 Individual SMP Beam Status");
-    //println!("13. Perform OCR on LHC Vistar page"); //Comeback to later
-    //println!("14. Perform OCR on LHC vistar page comments"); //Comeback to later
+    println!("13. Perform OCR on LHC Vistar page"); //Comeback to later
+    println!("14. Perform OCR on LHC vistar page comments"); //Comeback to later
 
     let mut input = String::new();
 
