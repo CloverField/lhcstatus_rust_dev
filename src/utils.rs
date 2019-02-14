@@ -10,9 +10,9 @@ pub fn get_pixels(coords: &[(u32, u32)], img: image::DynamicImage) -> Vec<[u8; 4
     pixels
 }
 
-pub fn get_sum_of_good_cryostats(pixels: Vec<[u8; 4]>) -> usize {
+pub fn get_sum_of_good_cryostats(pixels: &Vec<[u8; 4]>) -> usize {
     let mut sum_of_good_cyrostats = 0;
-    for &t in pixels.iter() {
+    for t in pixels.iter() {
         if t[0] == 0 && t[1] == 255 && t[2] == 0 {
             sum_of_good_cyrostats += 255;
         }
@@ -20,6 +20,6 @@ pub fn get_sum_of_good_cryostats(pixels: Vec<[u8; 4]>) -> usize {
     sum_of_good_cyrostats
 }
 
-pub fn get_sum_of_good_components(pixels: Vec<[u8; 4]>) -> usize {
-    get_sum_of_good_cryostats(pixels)
+pub fn get_sum_of_good_components(pixels: &Vec<[u8; 4]>) -> usize {
+    get_sum_of_good_cryostats(&pixels)
 }

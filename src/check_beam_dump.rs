@@ -53,7 +53,7 @@ fn get_beam_dump_status(beam: Beams) {
 
             let pixels = utils::get_pixels(&coords, img);
             let all_good = 255 * pixels.len();
-            let sum_of_good_components = utils::get_sum_of_good_components(pixels);
+            let sum_of_good_components = utils::get_sum_of_good_components(&pixels);
 
             if all_good == sum_of_good_components {
                 println!("Everything looks good for the Beam 1 Beam Dump");
@@ -83,7 +83,7 @@ fn get_beam_dump_status(beam: Beams) {
 
             let pixels = utils::get_pixels(&coords, img);
             let all_good = 255 * pixels.len();
-            let sum_of_good_components = utils::get_sum_of_good_components(pixels);
+            let sum_of_good_components = utils::get_sum_of_good_components(&pixels);
 
             if all_good == sum_of_good_components {
                 println!("Everything looks good for the Beam 2 Beam Dump");

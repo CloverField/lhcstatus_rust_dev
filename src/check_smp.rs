@@ -50,7 +50,7 @@ fn get_smp_status(beam: Beams) {
             }
 
             let all_good = 255 * pixels.len();
-            let sum_of_good_components = utils::get_sum_of_good_components(pixels);
+            let sum_of_good_components = utils::get_sum_of_good_components(&pixels);
 
             if all_good == sum_of_good_components {
                 println!("Beam 1's SMP status is good");
@@ -77,7 +77,7 @@ fn get_smp_status(beam: Beams) {
             }
 
             let all_good = 255 * pixels.len();
-            let sum_of_good_components = utils::get_sum_of_good_components(pixels);
+            let sum_of_good_components = utils::get_sum_of_good_components(&pixels);
 
             if all_good == sum_of_good_components {
                 println!("Beam 2's SMP status is good");

@@ -20,7 +20,7 @@ pub fn check_60_amp_status() {
 
     let pixels = utils::get_pixels(&coords, img);
     let all_good = pixels.len() * 255;
-    let sum_of_good_cyrostats = utils::get_sum_of_good_cryostats(pixels);
+    let sum_of_good_cyrostats = utils::get_sum_of_good_cryostats(&pixels);
 
     if all_good == sum_of_good_cyrostats {
         println!("All PCPermits are up");

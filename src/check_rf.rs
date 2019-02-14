@@ -43,7 +43,7 @@ fn get_rf_status(sector: RFSectors) {
 
             let pixels = utils::get_pixels(&coords, img);
             let all_good = 255 * pixels.len();
-            let sum_of_good_cyrostats = utils::get_sum_of_good_cryostats(pixels);
+            let sum_of_good_cyrostats = utils::get_sum_of_good_cryostats(&pixels);
 
             if all_good == sum_of_good_cyrostats {
                 println!("Everything looks good in Sector 1L4");
@@ -59,7 +59,7 @@ fn get_rf_status(sector: RFSectors) {
 
             let pixels = utils::get_pixels(&coords, img);
             let all_good = 255 * pixels.len();
-            let sum_of_good_cyrostats = utils::get_sum_of_good_cryostats(pixels);
+            let sum_of_good_cyrostats = utils::get_sum_of_good_cryostats(&pixels);
 
             if all_good == sum_of_good_cyrostats {
                 println!("Everything looks good in Sector 1R4");
@@ -75,7 +75,7 @@ fn get_rf_status(sector: RFSectors) {
 
             let pixels = utils::get_pixels(&coords, img);
             let all_good = 255 * pixels.len();
-            let sum_of_good_cyrostats = utils::get_sum_of_good_cryostats(pixels);
+            let sum_of_good_cyrostats = utils::get_sum_of_good_cryostats(&pixels);
 
             if all_good == sum_of_good_cyrostats {
                 println!("Everything looks good in Sector 1R4");
@@ -91,7 +91,7 @@ fn get_rf_status(sector: RFSectors) {
 
             let pixels = utils::get_pixels(&coords, img);
             let all_good = 255 * pixels.len();
-            let sum_of_good_cyrostats = utils::get_sum_of_good_cryostats(pixels);
+            let sum_of_good_cyrostats = utils::get_sum_of_good_cryostats(&pixels);
 
             if all_good == sum_of_good_cyrostats {
                 println!("Everything looks good in Sector 1R4");

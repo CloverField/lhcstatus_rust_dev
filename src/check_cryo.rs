@@ -59,7 +59,7 @@ fn get_sector_status(sector: CryoSectors) {
 
             let pixels = utils::get_pixels(&coords, img);
             let all_good = 255 * pixels.len();
-            let sum_of_good_cyrostats = utils::get_sum_of_good_cryostats(pixels);
+            let sum_of_good_cyrostats = utils::get_sum_of_good_cryostats(&pixels);
 
             if all_good == sum_of_good_cyrostats {
                 println!("Everything looks good in Sector 12");
@@ -79,7 +79,7 @@ fn get_sector_status(sector: CryoSectors) {
 
             let pixels = utils::get_pixels(&coords, img);
             let all_good = 255 * pixels.len();
-            let sum_of_good_cyrostats = utils::get_sum_of_good_cryostats(pixels);
+            let sum_of_good_cyrostats = utils::get_sum_of_good_cryostats(&pixels);
 
             if all_good == sum_of_good_cyrostats {
                 println!("Everything looks good in Sector 23");
@@ -97,7 +97,7 @@ fn get_sector_status(sector: CryoSectors) {
 
             let pixels = utils::get_pixels(&coords, img);
             let all_good = 255 * pixels.len();
-            let sum_of_good_cyrostats = utils::get_sum_of_good_cryostats(pixels);
+            let sum_of_good_cyrostats = utils::get_sum_of_good_cryostats(&pixels);
 
             if all_good == sum_of_good_cyrostats {
                 println!("Everything looks good in Sector 34");
@@ -119,7 +119,7 @@ fn get_sector_status(sector: CryoSectors) {
 
             let pixels = utils::get_pixels(&coords, img);
             let all_good = 255 * pixels.len();
-            let sum_of_good_cyrostats = utils::get_sum_of_good_cryostats(pixels);
+            let sum_of_good_cyrostats = utils::get_sum_of_good_cryostats(&pixels);
 
             if all_good == sum_of_good_cyrostats {
                 println!("Everything looks good in Sector 45");
@@ -141,7 +141,7 @@ fn get_sector_status(sector: CryoSectors) {
 
             let pixels = utils::get_pixels(&coords, img);
             let all_good = 255 * pixels.len();
-            let sum_of_good_cyrostats = utils::get_sum_of_good_cryostats(pixels);
+            let sum_of_good_cyrostats = utils::get_sum_of_good_cryostats(&pixels);
 
             if all_good == sum_of_good_cyrostats {
                 println!("Everything looks good in Sector 56");
@@ -159,7 +159,7 @@ fn get_sector_status(sector: CryoSectors) {
 
             let pixels = utils::get_pixels(&coords, img);
             let all_good = 255 * pixels.len();
-            let sum_of_good_cyrostats = utils::get_sum_of_good_cryostats(pixels);
+            let sum_of_good_cyrostats = utils::get_sum_of_good_cryostats(&pixels);
 
             if all_good == sum_of_good_cyrostats {
                 println!("Everything looks good in Sector 67");
@@ -179,7 +179,7 @@ fn get_sector_status(sector: CryoSectors) {
 
             let pixels = utils::get_pixels(&coords, img);
             let all_good = 255 * pixels.len();
-            let sum_of_good_cyrostats = utils::get_sum_of_good_cryostats(pixels);
+            let sum_of_good_cyrostats = utils::get_sum_of_good_cryostats(&pixels);
 
             if all_good == sum_of_good_cyrostats {
                 println!("Everything looks good in Sector 78");
@@ -203,7 +203,7 @@ fn get_sector_status(sector: CryoSectors) {
 
             let pixels = utils::get_pixels(&coords, img);
             let all_good = 255 * pixels.len();
-            let sum_of_good_cyrostats = utils::get_sum_of_good_cryostats(pixels);
+            let sum_of_good_cyrostats = utils::get_sum_of_good_cryostats(&pixels);
 
             if all_good == sum_of_good_cyrostats {
                 println!("Everything looks good in Sector 81");

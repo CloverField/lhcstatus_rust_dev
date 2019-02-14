@@ -22,7 +22,7 @@ fn get_exp_magnet_status() {
 
     let pixels = utils::get_pixels(&coords, img);
     let all_good = 255 * pixels.len();
-    let sum_of_good_cyrostats = utils::get_sum_of_good_cryostats(pixels);
+    let sum_of_good_cyrostats = utils::get_sum_of_good_cryostats(&pixels);
 
     if all_good == sum_of_good_cyrostats {
         println!("All Exp Magnets are functioning correctly");
