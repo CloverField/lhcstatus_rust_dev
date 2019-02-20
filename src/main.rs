@@ -53,7 +53,7 @@ fn select_option(n: u32) {
         7 => check_beam_dump::check_beam_dump_status(),
         9 => check_exp_magnets::check_exp_magnet_status(),
         11 => check_smp::check_smp_status(),
-        13 => check_vistar_page::check_vistar_status(),
+        13 => check_vistar_page::check_vistar_page_status(),
         _ => println!("Select a valid option"),
     }
 }
