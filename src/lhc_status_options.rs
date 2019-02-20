@@ -20,3 +20,8 @@ pub enum Beams {
     Beam1,
     Beam2,
 }
+
+pub enum Vistar {
+    EntirePage,
+    Comments,
+}
