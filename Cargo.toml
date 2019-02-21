@@ -8,4 +8,4 @@ edition = "2018"
 image = "0.21.0"
 reqwest = "0.9.9"
 tempdir = "0.3.7"
-tesseract_wrapper = { path = "../tesseract_wrapper/"}
+tesseract_wrapper = { git = "https://github.com/CloverField/tesseract_wrapper" }
